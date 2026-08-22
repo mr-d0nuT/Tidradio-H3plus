@@ -5,6 +5,9 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    // Ruta base del sitio de proyecto en GitHub Pages. Sin esto, el HTML
+    // pediría /assets/... desde la raíz del dominio y daría 404.
+    base: '/Tidradio-H3plus/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
