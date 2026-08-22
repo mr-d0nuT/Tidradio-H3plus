@@ -1,0 +1,40 @@
+--- src/App.tsx
++++ src/App.tsx
+@@ -156,23 +156,20 @@
+           <div className='mt-8 grid grid-cols-3 gap-4 relative z-10'>
+             <div className='col-span-3 grid grid-cols-3 gap-4 mb-2'>
+               <button 
+-                onTouchStart={() => handleKeyDown(KEY_MENU)} onTouchEnd={handleKeyUp}
+-                onMouseDown={() => handleKeyDown(KEY_MENU)} onMouseUp={handleKeyUp} onMouseLeave={handleKeyUp}
++                onPointerDown={() => handleKeyDown(KEY_MENU)} onPointerUp={handleKeyUp} onPointerLeave={handleKeyUp} onPointerCancel={handleKeyUp}
+                 onContextMenu={(e) => e.preventDefault()}
+                 className='h-14 bg-zinc-700 rounded-lg border-b-4 border-zinc-900 text-white font-bold text-sm active:translate-y-1 active:border-b-0 transition-all touch-none select-none'
+               >
+                 MENU
+               </button>
+               <button 
+-                onTouchStart={() => handleKeyDown(KEY_UP)} onTouchEnd={handleKeyUp}
+-                onMouseDown={() => handleKeyDown(KEY_UP)} onMouseUp={handleKeyUp} onMouseLeave={handleKeyUp}
++                onPointerDown={() => handleKeyDown(KEY_UP)} onPointerUp={handleKeyUp} onPointerLeave={handleKeyUp} onPointerCancel={handleKeyUp}
+                 onContextMenu={(e) => e.preventDefault()}
+                 className='h-14 bg-zinc-700 rounded-lg border-b-4 border-zinc-900 text-white font-bold text-sm flex flex-col items-center justify-center active:translate-y-1 active:border-b-0 transition-all touch-none select-none'
+               >
+                 <span className='text-[10px] opacity-50'>UP</span>▲
+               </button>
+               <button 
+-                onTouchStart={() => handleKeyDown(KEY_EXIT)} onTouchEnd={handleKeyUp}
+-                onMouseDown={() => handleKeyDown(KEY_EXIT)} onMouseUp={handleKeyUp} onMouseLeave={handleKeyUp}
++                onPointerDown={() => handleKeyDown(KEY_EXIT)} onPointerUp={handleKeyUp} onPointerLeave={handleKeyUp} onPointerCancel={handleKeyUp}
+                 onContextMenu={(e) => e.preventDefault()}
+                 className='h-14 bg-zinc-700 rounded-lg border-b-4 border-zinc-900 text-white font-bold text-sm active:translate-y-1 active:border-b-0 transition-all touch-none select-none'
+               >
+@@ -194,8 +191,7 @@
+               ].map(key => (
+                 <button 
+                   key={key.digit} 
+-                  onTouchStart={() => handleKeyDown(key.code)} onTouchEnd={handleKeyUp}
+-                  onMouseDown={() => handleKeyDown(key.code)} onMouseUp={handleKeyUp} onMouseLeave={handleKeyUp}
++                  onPointerDown={() => handleKeyDown(key.code)} onPointerUp={handleKeyUp} onPointerLeave={handleKeyUp} onPointerCancel={handleKeyUp}
+                   onContextMenu={(e) => e.preventDefault()}
+                   className='h-14 bg-zinc-800 rounded-lg border-b-4 border-black text-white flex flex-col items-center justify-center active:translate-y-1 active:border-b-0 transition-all touch-none select-none'
+                 >

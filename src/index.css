@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --theme-primary: #06b6d4; /* cyan */
+    --theme-primary-rgb: 6, 182, 212;
+    --theme-accent: #3b82f6; /* blue */
+    --theme-glow: rgba(6, 182, 212, 0.4);
+    --theme-bg-base: #06080d;
+    --theme-card-bg: #0d1017;
+    --theme-lcd-bg: #04090e;
+  }
+
+  [data-theme="phosphor"] {
+    --theme-primary: #10b981; /* phosphor emerald */
+    --theme-primary-rgb: 16, 185, 129;
+    --theme-accent: #059669;
+    --theme-glow: rgba(16, 185, 129, 0.45);
+    --theme-bg-base: #040a06;
+    --theme-card-bg: #08140c;
+    --theme-lcd-bg: #020b05;
+  }
+
+  [data-theme="amber"] {
+    --theme-primary: #f59e0b; /* tactical amber */
+    --theme-primary-rgb: 245, 158, 11;
+    --theme-accent: #d97706;
+    --theme-glow: rgba(245, 158, 11, 0.45);
+    --theme-bg-base: #0a0703;
+    --theme-card-bg: #140e07;
+    --theme-lcd-bg: #0c0803;
+  }
+
+  [data-theme="amethyst"] {
+    --theme-primary: #a855f7; /* neon purple */
+    --theme-primary-rgb: 168, 85, 247;
+    --theme-accent: #ec4899;
+    --theme-glow: rgba(168, 85, 247, 0.45);
+    --theme-bg-base: #08050e;
+    --theme-card-bg: #110c1c;
+    --theme-lcd-bg: #0a0614;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--theme-bg-base);
+    color: #e2e8f0;
+  }
+}
+
+.font-display {
+  font-family: 'Orbitron', 'Chakra Petch', sans-serif;
+}
+
+.font-tactical {
+  font-family: 'Chakra Petch', 'Rajdhani', sans-serif;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Tactical Background Grid Pattern */
+.bg-tactical-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.bg-tactical-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* CRT Scanline Filter */
+.crt-overlay {
+  position: relative;
+}
+.crt-overlay::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  z-index: 5;
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Glowing Neon Borders */
+.glow-primary {
+  box-shadow: 0 0 20px -3px var(--theme-glow);
+}
+
+.glow-primary-sm {
+  box-shadow: 0 0 10px -2px var(--theme-glow);
+}
+
+/* Custom Tactical Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090b10;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f293d;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-primary);
+}
+
+/* Pulse animation for RF lock */
+@keyframes rf-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.92); }
+}
+
+.animate-rf-pulse {
+  animation: rf-pulse 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+

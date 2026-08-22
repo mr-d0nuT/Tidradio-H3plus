@@ -1,0 +1,6 @@
+{
+  "name": "TIDRADIO TD-H3 Plus Tactical Cockpit",
+  "description": "Tactical Web Bluetooth & USB-C CPS programmer, live LCD mirror and real-time SDR spectrum analyzer for TIDRADIO TD-H3 Plus",
+  "requestFramePermissions": ["bluetooth"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
